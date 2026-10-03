@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-script: 'Caveat', 'Marck Script', cursive;
+  }
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Custom light minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F1EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1CBC1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8976C;
+}
+
+/* Custom Luxury Cursor Base - Only on fine pointer devices (desktop) */
+@media (pointer: fine) {
+  body {
+    cursor: default;
+  }
+  a, button, input, select, textarea, [role="button"], label {
+    cursor: pointer;
+  }
+}
+
+/* Subtle warm metallic & light accent utilities */
+.text-bronze {
+  color: #9E8058;
+}
+
+.bg-bronze {
+  background-color: #B8976C;
+}
+
+.border-bronze {
+  border-color: #B8976C;
+}
+
+.bg-bone {
+  background-color: #FAFAF7;
+}
+
+.bg-warm-stone {
+  background-color: #F3EFEA;
+}
+
+/* Custom Luxury Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-10px, 12px) scale(1.04);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(184, 151, 108, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px rgba(184, 151, 108, 0.2);
+  }
+}
+
+@keyframes shimmerLight {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 8s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+.shimmer-badge {
+  background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(245,237,228,0.95) 50%, rgba(255,255,255,0.7) 100%);
+  background-size: 200% 100%;
+  animation: shimmerLight 4s infinite linear;
+}
+
+/* Card hover transitions */
+.hover-luxury-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+.hover-luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -6px rgba(26, 24, 22, 0.08), 0 4px 10px -2px rgba(26, 24, 22, 0.04);
+  border-color: #C5A880;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

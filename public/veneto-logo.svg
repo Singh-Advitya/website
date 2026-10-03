@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap');
+      .veneto-script-text {
+        font-family: 'Caveat', 'Dancing Script', 'Brush Script MT', 'Segoe Script', cursive;
+        font-weight: 600;
+        fill: #FFFFFF;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+
+  <!-- Solid Outer Black Square -->
+  <rect width="500" height="500" fill="#000000" />
+
+  <!-- Inset White Square Frame with Generous Margins -->
+  <rect x="58" y="58" width="384" height="384" fill="none" stroke="#FFFFFF" stroke-width="11" />
+
+  <!-- Veneto Clinic Signature Script Perfectly Centered and Contained -->
+  <g class="veneto-script-text">
+    <text x="250" y="222" font-size="86" textLength="250" lengthAdjust="spacingAndGlyphs">Veneto</text>
+    <text x="250" y="326" font-size="82" textLength="220" lengthAdjust="spacingAndGlyphs">Clinic</text>
+  </g>
+</svg>
