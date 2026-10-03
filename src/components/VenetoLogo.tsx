@@ -15,14 +15,14 @@ export const VenetoLogo: React.FC<VenetoLogoProps> = ({
   withLabel = false,
   className = '',
 }) => {
-  // Refined, balanced emblem sizes for crisp, elegant proportions
+  // Balanced, prestigious emblem sizes for clear brand recognition
   const sizeMap: Record<string, { className: string; px: number }> = {
     xs: { className: 'w-8 h-8', px: 32 },
-    sm: { className: 'w-12 h-12', px: 48 },
-    md: { className: 'w-[52px] h-[52px] sm:w-[58px] sm:h-[58px]', px: 58 },
-    lg: { className: 'w-20 h-20 sm:w-22 sm:h-22', px: 84 },
-    xl: { className: 'w-28 h-28 sm:w-30 sm:h-30', px: 116 },
-    '2xl': { className: 'w-36 h-36 sm:w-40 sm:h-40', px: 150 },
+    sm: { className: 'w-12 h-12 sm:w-14 sm:h-14', px: 52 },
+    md: { className: 'w-16 h-16 sm:w-18 sm:h-18', px: 72 },
+    lg: { className: 'w-20 h-20 sm:w-22 sm:h-22 lg:w-[86px] lg:h-[86px]', px: 86 },
+    xl: { className: 'w-28 h-28 sm:w-32 sm:h-32', px: 128 },
+    '2xl': { className: 'w-36 h-36 sm:w-44 sm:h-44', px: 168 },
   };
 
   const selectedSize = sizeMap[size] || sizeMap.md;
@@ -32,28 +32,28 @@ export const VenetoLogo: React.FC<VenetoLogoProps> = ({
   // Theme palettes
   const colorThemes = {
     black: {
-      bg: '#000000',
+      bg: '#0A0A09',
       frame: '#FFFFFF',
       text: '#FFFFFF',
-      outerBorder: 'border border-black/10',
+      outerBorder: 'border border-black/20 shadow-md',
     },
     white: {
       bg: '#FFFFFF',
       frame: '#1A1816',
       text: '#1A1816',
-      outerBorder: 'border border-[#DDD7CB]',
+      outerBorder: 'border border-[#DDD7CB] shadow-sm',
     },
     gold: {
       bg: '#141210',
-      frame: '#C5A880',
-      text: '#F5EDE2',
-      outerBorder: 'border border-[#C5A880]/30',
+      frame: '#D4AF37',
+      text: '#FDFBF7',
+      outerBorder: 'border border-[#D4AF37]/40 shadow-md',
     },
     'monochrome-dark': {
       bg: '#181614',
       frame: '#FFFFFF',
       text: '#FFFFFF',
-      outerBorder: 'border border-white/10',
+      outerBorder: 'border border-white/20 shadow-md',
     },
   }[variant];
 
@@ -61,7 +61,7 @@ export const VenetoLogo: React.FC<VenetoLogoProps> = ({
     <div className={`inline-flex items-center gap-3.5 ${className}`}>
       {/* Boxed Official Veneto Clinic Emblem */}
       <div
-        className={`${dimensionClass} shrink-0 aspect-square select-none shadow-sm transition-transform duration-200 group-hover:scale-105 ${colorThemes.outerBorder} overflow-hidden`}
+        className={`${dimensionClass} shrink-0 aspect-square select-none rounded-sm transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg ${colorThemes.outerBorder} overflow-hidden`}
         style={inlineStyle}
         aria-label="Veneto Clinic Official Logo"
       >
@@ -75,42 +75,42 @@ export const VenetoLogo: React.FC<VenetoLogoProps> = ({
           {/* Background Outer Box */}
           <rect width="500" height="500" fill={colorThemes.bg} />
 
-          {/* Inset Inner Frame (Generous Padding from Canvas Edges) */}
+          {/* Inset Inner Frame (High contrast, elegant geometric border) */}
           <rect
-            x="58"
-            y="58"
-            width="384"
-            height="384"
+            x="52"
+            y="52"
+            width="396"
+            height="396"
             fill="none"
             stroke={colorThemes.frame}
-            strokeWidth="11"
+            strokeWidth="12"
           />
 
-          {/* Signature Script Lettering Strictly Inside the Frame with Ample Margins */}
+          {/* Signature Script Lettering with Enhanced Contrast & Weight */}
           <g
             fill={colorThemes.text}
             textAnchor="middle"
             style={{
-              fontFamily: "'Caveat', 'Dancing Script', 'Brush Script MT', 'Segoe Script', cursive",
-              fontWeight: 600,
+              fontFamily: "'Caveat', 'Dancing Script', 'Marck Script', 'Brush Script MT', cursive",
+              fontWeight: 700,
             }}
           >
             <text
               x="250"
-              y="222"
-              fontSize="84"
-              letterSpacing="0.5"
-              textLength="240"
+              y="226"
+              fontSize="96"
+              letterSpacing="0.8"
+              textLength="260"
               lengthAdjust="spacingAndGlyphs"
             >
               Veneto
             </text>
             <text
               x="250"
-              y="324"
-              fontSize="80"
-              letterSpacing="0.5"
-              textLength="210"
+              y="336"
+              fontSize="90"
+              letterSpacing="0.8"
+              textLength="230"
               lengthAdjust="spacingAndGlyphs"
             >
               Clinic
@@ -121,11 +121,16 @@ export const VenetoLogo: React.FC<VenetoLogoProps> = ({
 
       {/* Optional Typographic Lockup */}
       {withLabel && (
-        <div className="flex flex-col text-left">
-          <span className="text-base sm:text-lg font-serif tracking-[0.06em] font-medium text-[#1A1816] uppercase leading-tight">
-            Veneto Dental Clinic
-          </span>
-          <span className="text-[10px] sm:text-[11px] font-sans tracking-[0.2em] text-[#7A7365] uppercase font-semibold">
+        <div className="flex flex-col text-left justify-center">
+          <div className="flex items-baseline gap-1.5">
+            <span className="text-xl sm:text-2xl font-serif tracking-[0.06em] font-semibold text-[#1A1816] leading-none">
+              VENETO
+            </span>
+            <span className="text-xs sm:text-sm font-serif tracking-[0.16em] uppercase text-[#9E8058] font-medium">
+              CLINIC
+            </span>
+          </div>
+          <span className="text-[10px] sm:text-[11px] font-sans tracking-[0.22em] text-[#7A7365] uppercase font-semibold mt-1">
             Dubai · The Opus, Business Bay
           </span>
         </div>
